@@ -1,0 +1,11 @@
+@use '../../style' as s;
+
+.back-button {
+	// @include s.click;
+	cursor: pointer;
+	transition: opacity 0,7s;
+
+	&:hover {
+		opacity: 0,7;
+	}
+}
