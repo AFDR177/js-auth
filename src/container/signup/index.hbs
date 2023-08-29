@@ -25,6 +25,12 @@
             </div>
 
             <div class="form__item">
+                {{> field-password action="signupForm.change" label="Пароль ще раз" name="passwordAgain"
+                placeholder="Ваш пароль"}}
+                <span name="passwordAgain" class="form__error">Помилка</span>
+            </div>
+
+            <div class="form__item">
                 {{> field-select action="signupForm.change" label="Роль" name="role"
                 placeholder="Оберіть роль" list=data.role}}
                 <span name="role" class="form__error">Помилка</span>
@@ -38,9 +44,9 @@
         </div>
 
         {{!-- Привязка button через onclick --}}
-        <button onclick="signupForm.submit()" class="button" type="button">Зареєструватись</button>
+        <button onclick="signupForm.submit()" class="button button--disabled" type="button">Зареєструватись</button>
 
-        <span class="alert alert--error">Увага, помилка!</span>
+        <span class="alert alert--disabled">Увага, помилка!</span>
 
     </form>
 

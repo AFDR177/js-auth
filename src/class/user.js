@@ -33,6 +33,16 @@ class User {
     const user = new User(data)
 
     this.#list.push(user)
+
+    console.log(this.#list)
+  }
+
+  //Шукаємо користувача по email і якщо знаходимо то повертаємо його якщо не знаходимо то повертаємо null
+  static getByEmail(email) {
+    return (
+      this.#list.find((user) => user.email === email) ||
+      null
+    )
   }
 }
 
