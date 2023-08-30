@@ -6,11 +6,14 @@ class User {
   }
 
   static #list = []
+  static #count = 1
 
   constructor({ email, password, role }) {
+    this.id = User.#count++
     this.email = String(email).toLocaleLowerCase()
-    this.password = password
+    this.password = String(password)
     this.role = User.#convertRole(role)
+    this.isConfirm = false
   }
 
   //Метод перевірки role  на число, якщо не число то позамовчуванню буде USER
@@ -35,6 +38,8 @@ class User {
     this.#list.push(user)
 
     console.log(this.#list)
+
+    return user
   }
 
   //Шукаємо користувача по email і якщо знаходимо то повертаємо його якщо не знаходимо то повертаємо null
